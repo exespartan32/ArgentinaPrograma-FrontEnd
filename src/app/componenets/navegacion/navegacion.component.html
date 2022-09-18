@@ -1,0 +1,37 @@
+<nav class="navbar-expand-md navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="logo">
+      <img src="../../../assets/img/icons/APLogo-20-20.png" id="logoAP">
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mx-auto mb-5 mb-lg-0 end-0 text-center">
+        <p class="h2 text-white">Portfolio</p>
+      </ul>
+      <div class="sociales">
+        <a href=""><img src="../../../assets/img/icons/facebook.png" class="img"></a>
+        <a href=""><img src="../../../assets/img/icons/github.png" class="img"></a>
+        <a href=""><img src="../../../assets/img/icons/instagram.png" class="img"></a>
+        <a href=""><img src="../../../assets/img/icons/linkedin.png" class="img"></a>
+      </div>
+      <div class="singIn">
+        <!-- iniciar sesion -->
+        <button type="button" class="btn btn-outline-info text-white pt-2" 
+        (click)="login()" *ngIf="!isLogged">
+          Iniciar sesion
+          <img src="../../../assets/img/icons/sign-in.png" alt="" height="40">
+        </button>
+
+        <!-- cerrar sesion -->
+        <button type="button" class="btn btn-outline-danger text-white pt-2" 
+        (click)=" onLogOut()" *ngIf="isLogged">
+          Cerrar sesion
+          <img src="../../../assets/img/icons/sign-out.png" alt="" height="40">
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

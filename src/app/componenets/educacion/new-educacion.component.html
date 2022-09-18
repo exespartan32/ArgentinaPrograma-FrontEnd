@@ -1,0 +1,54 @@
+<section class="vh-100" style="background-color: #9A616D;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center text-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                <div class="d-flex align-items-center mb-3 pb-1">
+                  <span class="h1 fw-bold mb-0">Agregar nueva Educacion</span>
+                </div>
+
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">por favor, ingrese los datos del nuevo
+                  estudio</h5>
+
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm" enctype="multipart/form-data">
+
+                  <!-- input nombre de la institucion -->
+                  <div class="form-group pt-3">
+                    <label for="nombreEducacion">Nombre de la institucion</label>
+                    <input type="text" name="nombreEducacion" id="nombreEducacion" class="form-control" [(ngModel)]="nombreEducacion"
+                      required>
+                  </div>
+
+                  <!-- input descripcion de los estudios -->
+                  <div class="form-group pt-3">
+                    <label for="descripcionEducacion">Descripcion de sus estudios</label>
+                    <input type="text" name="descripcionEducacion" id="descripcionEducacion" class="form-control"
+                      [(ngModel)]="descripcionEducacion" required>
+                  </div>
+
+                  <!-- input imagen -->
+                  <div class="form-group pt-3">
+                    <label for="imagenEducacion">imagen</label>
+                    <input type="file" name="imagenEducacion" id="imagenEducacion" class="form-control"
+                      [(ngModel)]="imagenEducacion" required (change)="capturarFile($event)">
+                  </div>
+                  <br>
+                  <button type="submit" class="btn btn-primary text-white">
+                    Agregar Educacion
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

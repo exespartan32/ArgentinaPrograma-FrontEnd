@@ -1,0 +1,13 @@
+#logoAP{
+    width: 150px;
+}
+.img{
+    width: 50px;
+    margin-right: 0.4em
+}
+.btn{
+    border-width: medium;
+}
+.sociales, .singIn{
+    text-align: center;
+}

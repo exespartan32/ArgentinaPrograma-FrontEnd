@@ -1,0 +1,14 @@
+.row{
+    background: #a1b5cb;
+    padding: 20px;
+}
+.contenedor{
+    width: auto;
+}
+.Proy1Part1, .Proy1Part2{
+    display: inline-block;
+    text-align: justify;
+}
+.img-proyecto1{
+    box-shadow: 10px 10px 30px #000000;
+}
