@@ -27,6 +27,7 @@ export class EducacionService {
 
   // crea una nueva educacion
   public save(educacion: Educacion): Observable<any>{
+    console.log(educacion)
     return this.httpClient.post<any>(this.URL + 'create', educacion);
   }
 

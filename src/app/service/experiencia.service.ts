@@ -25,7 +25,9 @@ export class ExperienciaService {
 
   // crea una nueva experiencia
   public save(experiencia: Experiencia): Observable<any> {
+    console.log(experiencia)
     return this.httpClient.post<any>(this.URL + 'create', experiencia);
+
   }
 
   // actualiza una experiencia

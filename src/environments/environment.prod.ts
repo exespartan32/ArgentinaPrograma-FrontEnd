@@ -9,6 +9,6 @@ export const environment = {
     messagingSenderId: '500522808015',
   },
   production: true,
-  //URL: 'http://localhost:8080/'
-  URL: 'https://back-end-argentina-programa.herokuapp.com/'
+  URL: 'http://localhost:8080/'
+  //URL: 'https://back-end-argentina-programa.herokuapp.com/'
 };

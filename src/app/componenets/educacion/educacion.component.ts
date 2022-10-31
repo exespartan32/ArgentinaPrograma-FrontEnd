@@ -30,6 +30,9 @@ export class EducacionComponent implements OnInit {
     this.educacionS.lista().subscribe(
       data => {
         this.educacion = data;
+        console.log("educaciones: ")
+        console.log(data)
+        console.log(this.educacion)
       }
     )
   }
