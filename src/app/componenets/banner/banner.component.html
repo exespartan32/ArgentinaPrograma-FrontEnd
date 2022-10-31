@@ -1,3 +1,28 @@
-<div>
-    <img src="../../../assets/img/banner/futuristic-banner-background-with-wireframe-terrain-vector.webp" alt="">
+<!-- <div>
+  <button class="btn btn-outline-primary">
+    <img src="../../../assets/img/icons/editar.png" height="50" width="50">
+  </button>
+  <img src="../../../assets/img/banner/futuristic-banner-background-with-wireframe-terrain-vector.webp" alt="">
+</div> -->
+
+<!-- <div class="row img-font">
+  <div>
+    <button class="btn btn-outline-primary icono-editar">
+      <img class="" src="../../../assets/img/icons/editar.png" height="50" width="50">
+    </button>
+  </div>
+  <div>
+    <img class="img-banner"
+      src="../../../assets/img/banner/futuristic-banner-background-with-wireframe-terrain-vector.webp" alt="">
+  </div>
+</div> -->
+
+<div style="background: url({{banner.imagenBanner}}) no-repeat center top; 
+    height: 370px;
+    background-size: 100% 100%">
+  <div class="" routerLink="/editarBanner/{{banner.id}}" *ngIf="isLogged">
+    <button class="btn btn-outline-primary" id="icon-edit" >
+      <img class="" src="../../../assets/img/icons/editar.png" height="50" width="50">
+    </button>
+  </div>
 </div>

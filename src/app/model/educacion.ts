@@ -5,10 +5,10 @@ export class Educacion {
     imagenEducacion: string;
 
     constructor(
-        nombreEducacion: string, 
+        nombreEducacion: string,
         descripcionEducacion: string,
         imagenEducacion: string
-        ) {
+    ) {
         this.nombreEducacion = nombreEducacion;
         this.descripcionEducacion = descripcionEducacion;
         this.imagenEducacion = imagenEducacion;

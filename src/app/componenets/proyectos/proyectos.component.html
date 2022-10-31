@@ -1,14 +1,70 @@
-<div class="row">
-    <h1>Proyectoss realizados</h1>
-    <div class="contenedor">
+<!-- <div class="row text-center pt-5">
+
+    <h1>Proyectos realizados</h1>
+
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark text-white" routerLink="/nuevoProyecto" *ngIf="isLogged">
+            Agregar nuevo Proyecto <img src="../../../assets/img/icons/add-file.png" height="50" width="50">
+        </button>
+    </div>
+    <div class="col-12"></div>
+    <div class="contenedor" *ngFor="let proy of proyecto">
         <div class="col-sm-12 col-md-7 col-lg-7 Proy1Part1">
-            <h3>Libreta de Contactos</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum placeat unde consequuntur beatae cumque incidunt facere recusandae odio, quo amet, iusto porro nulla, dicta blanditiis cupiditate cum dolor suscipit labore!</p>
+            <h3>{{proy.nombreProyecto}}</h3>
+            <p>{{proy.descripcionProyecto}}</p>
         </div>
         <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 Proy1Part2">
-            <a href="https://app-contact-book.herokuapp.com/">
-                <img src="../../../assets/img/proyects/contactBook.png" class="img-fluid img-proyecto1">
+            <a href={{proy.linkProyecto}}>
+                <img src={{proy.imagenProyecto}} class="img-fluid img-proyecto1">
             </a>
         </div>
+        <td *ngIf="isLogged">
+            <button class="btn btn-dark text-white" routerLink="/editarProyecto/{{proy.id}}">
+                Editar <img src="../../../assets/img/icons/editar.png" height="50" width="50">
+            </button>
+        </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-danger text-white" (click)="delete(proy.id)">
+                Eliminar <img src="../../../assets/img/icons/basura.png" height="50" width="50">
+            </button>
+        </td>
+    </div>
+</div> -->
+
+<div class="row text-center pt-5">
+    <h1>Educacion</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark text-white" routerLink="/nuevoProyecto" *ngIf="isLogged">
+            Agregar nuevo Proyecto <img src="../../../assets/img/icons/add-file.png" height="50" width="50">
+        </button>
+    </div>
+    <div class="col-lg-2 col-md-1 col-sm-1 col-xs-12"></div>
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-12 table-responsive">
+        <table class="table table-hover">
+            <tbody>
+                <tr *ngFor="let proy of proyecto">
+                    <td class="item-alineacion">
+                        <a href={{proy.linkProyecto}}>
+                            <img src={{proy.imagenProyecto}} width="400" height="200">
+                        </a>
+                    </td>
+                    <td class="item-alineacion">
+                        <h2><strong>{{proy.nombreProyecto}}</strong></h2>
+                    </td>
+                    <td class="item-alineacion">{{proy.descripcionProyecto}}</td>
+                    <td *ngIf="isLogged" class="item-alineacion">
+                        <button class="btn btn-dark text-white" routerLink="/editarProyecto/{{proy.id}}">
+                            Editar <img src="../../../assets/img/icons/editar.png" height="50" width="50">
+                        </button>
+                    </td>
+                    <td *ngIf="isLogged" class="item-alineacion">
+                        <button class="btn btn-danger text-white" (click)="delete(proy.id)">
+                            Eliminar <img src="../../../assets/img/icons/basura.png" height="50" width="50">
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+

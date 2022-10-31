@@ -1,12 +1,14 @@
 export const environment = {
   firebase: {
-    projectId: 'imagenes-argentina-programa',
-    appId: '1:661400203508:web:f64ba4493d894045e9aea1',
-    storageBucket: 'imagenes-argentina-programa.appspot.com',
+    projectId: 'argentinaprogramaimages',
+    appId: '1:500522808015:web:045c847e069ddb227efdba',
+    storageBucket: 'argentinaprogramaimages.appspot.com',
     locationId: 'us-central',
-    apiKey: 'AIzaSyC66uDKMiTLIkm0gfRmzE7FAjaQSuIIo-0',
-    authDomain: 'imagenes-argentina-programa.firebaseapp.com',
-    messagingSenderId: '661400203508',
+    apiKey: 'AIzaSyBppHdjKzjs-rrXFaPzEQiOScp4sspGbXE',
+    authDomain: 'argentinaprogramaimages.firebaseapp.com',
+    messagingSenderId: '500522808015',
   },
-  production: true
+  production: true,
+  //URL: 'http://localhost:8080/'
+  URL: 'https://back-end-argentina-programa.herokuapp.com/'
 };

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Educacion } from '../model/educacion';
 
 @Injectable({
@@ -8,14 +9,15 @@ import { Educacion } from '../model/educacion';
 })
 export class EducacionService {
 
-  URL = 'http://localhost:8080/educacion/';
+  URL = environment.URL + 'educacion/';
+  //URL = 'http://localhost:8080/educacion/';
   //URL = 'https://back-end-argentina-programa.herokuapp.com/educacion/';
 
   constructor(private httpClient : HttpClient) { }
 
   // lista las educaciones que existen
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.URL + 'lista');
+    return this.httpClient.get<Educacion[]>(this.URL + 'list');
   }
 
   // busca una educacion por id

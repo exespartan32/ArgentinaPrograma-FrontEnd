@@ -1,4 +1,4 @@
-<div class="row text-center pt-5">
+<div class="row text-center items-align-center">
     <h1>Educacion</h1>
     <div class="col-lg-2">
         <button type="button" class="btn btn-dark text-white" routerLink="/nuevaEducacion" *ngIf="isLogged">
@@ -6,23 +6,23 @@
         </button>
     </div>
     <div class="col-lg-2 col-md-1 col-sm-1 col-xs-12"></div>
-    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-12 table-responsive table-hover">
-        <table class="table ">
+    <div class="col-lg-10 col-md-11 col-sm-11 col-xs-12 table-responsive ">
+        <table class="table table-hover">
             <tbody>
-                <tr *ngFor="let Educacion of educacion">
+                <tr *ngFor="let Educacion of educacion"> 
                     <td>
                         <img src="{{Educacion.imagenEducacion}}" width="200" height="200">
                     </td>
-                    <td>
+                    <td class="item-alineacion">
                         <h2><strong>{{Educacion.nombreEducacion}}</strong></h2>
                     </td>
-                    <td class="pt-3">{{Educacion.descripcionEducacion}}</td>
-                    <td *ngIf="isLogged">
+                    <td class="item-alineacion">{{Educacion.descripcionEducacion}}</td>
+                    <td *ngIf="isLogged" class="item-alineacion">
                         <button class="btn btn-dark text-white" routerLink="/editarEducacion/{{Educacion.id}}">
                             Editar <img src="../../../assets/img/icons/editar.png" height="50" width="50">
                         </button>
                     </td>
-                    <td *ngIf="isLogged">
+                    <td *ngIf="isLogged" class="item-alineacion">
                         <button class="btn btn-danger text-white" (click)="delete(Educacion.id)">
                             Eliminar <img src="../../../assets/img/icons/basura.png" height="50" width="50">
                         </button>

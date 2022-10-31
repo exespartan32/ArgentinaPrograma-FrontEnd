@@ -18,17 +18,17 @@ export class NewEducacionComponent implements OnInit {
   public archivos: any = []
 
   constructor(
-    private educacionService: EducacionService, 
+    private educacionService: EducacionService,
     private router: Router,
     private storage: Storage
-    ) { }
+  ) { }
 
   ngOnInit(): void {
   }
 
   capturarFile(event: any) {
     const archivoCapturado = event.target.files[0]
-    this.archivos.push(archivoCapturado);
+    this.archivos.push(archivoCapturado)
 
     const imgRef = ref(this.storage, `images/${archivoCapturado.name}`)
 
@@ -38,28 +38,32 @@ export class NewEducacionComponent implements OnInit {
           const imgRef = response.ref
           const urlImg = await getDownloadURL(imgRef)
           this.urlViewImg = urlImg
+          console.log("url archivo leido: " + this.urlViewImg)
         }
       )
       .catch(error => console.log(error));
   }
 
-  onCreate(): void{
+  onCreate(): void {
     const educacion = new Educacion(
-      this.nombreEducacion, 
+      this.nombreEducacion,
       this.descripcionEducacion,
       this.urlViewImg
-      );
-    //console.log(educacion)
-    /* */
-    this.educacionService.save(educacion).subscribe(
-      data =>{
-        alert("Educacion añadida correctamente");
-        this.router.navigate(['']);
-      }, err =>{
-        alert("falló");
-        this.router.navigate(['']);
-      }
-    )
-    
+    );
+    if (!this.urlViewImg) {
+      alert("¡¡error!! la imagen no se ha subido a la DB, espere unos instantes hasta que se suba a la base de datos");
+    } else {
+      this.educacionService.save(educacion).subscribe(
+        data => {
+          alert("Educacion añadida correctamente");
+          this.router.navigate(['']);
+        }, err => {
+          alert("falló al agregar la educacion");
+          this.router.navigate(['']);
+        }
+      )
+    }
+
+
   }
 }

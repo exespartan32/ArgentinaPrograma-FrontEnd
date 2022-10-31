@@ -1,5 +1,36 @@
-img{
+/* img{
     width: 100%;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-color: rgba(76, 202, 211, 0);
+} */
+
+.icono-editar {
+    position: relative;
+    left: 90%;
+    border-radius: 100%;
+    box-shadow: 3px 3px 3px gray;
+}
+
+@media (min-width: 576px) {
+    #icon-edit {
+        position: relative;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px gray;
+        left: 90%;
+    }
+}
+
+@media (max-width: 575px) {
+    #icon-edit {
+/*         position: relative;
+        width: 40%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px gray;
+        top: auto; */
+        position: relative;
+        left: 77%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px gray;
+    }
 }

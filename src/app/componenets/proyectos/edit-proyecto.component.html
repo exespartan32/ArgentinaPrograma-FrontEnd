@@ -1,0 +1,63 @@
+<section class="vh-100" style="background-color: #9A616D;" *ngIf="proyecto">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center text-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h1 fw-bold mb-0">Editar proyecto</span>
+                  </div>
+  
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">por favor, ingrese los nuevos datos de
+                    proyecto</h5>
+  
+  
+                    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm" enctype="multipart/form-data">
+
+                        <!-- input nombre del proyecto -->
+                        <div class="form-group pt-3">
+                          <label for="nombreProyecto">Nombre del Proyecto</label>
+                          <input type="text" name="nombreProyecto" id="nombreProyecto" class="form-control"
+                            [(ngModel)]="proyecto.nombreProyecto" required>
+                        </div>
+      
+                        <!-- input descripcion del proyecto -->
+                        <div class="form-group pt-3">
+                          <label for="descripcionProyecto">Descripcion del Proyecto</label>
+                          <input type="text" name="descripcionProyecto" id="descripcionProyecto" class="form-control"
+                            [(ngModel)]="proyecto.descripcionProyecto" required>
+                        </div>
+      
+                        <!-- input imagen -->
+                        <div class="form-group pt-3">
+                          <label for="imagenProyecto">imagen</label>
+                          <input type="file" name="imagenProyecto" id="imagenProyecto" class="form-control"
+                            [(ngModel)]="proyecto.imagenProyecto" required (change)="capturarFile($event)">
+                        </div>
+      
+                        <!-- input link del proyecto -->
+                        <div class="form-group pt-3">
+                          <label for="linkProyecto">Link del Proyecto</label>
+                          <input type="url" name="linkProyecto" id="linkProyecto" class="form-control"
+                            [(ngModel)]="proyecto.linkProyecto" required>
+                        </div>
+      
+                        <br>
+                        <button type="submit" class="btn btn-primary text-white">
+                          Agregar Proyecto
+                        </button>
+                      </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

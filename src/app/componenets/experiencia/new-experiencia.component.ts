@@ -44,7 +44,7 @@ export class NewExperienciaComponent implements OnInit {
           const imgRef = response.ref
           const urlImg = await getDownloadURL(imgRef)
           this.urlViewImg = urlImg
-          console.log("url archivo leido: "+ this.urlViewImg)
+          console.log("url archivo leido: " + this.urlViewImg)
         }
       )
       .catch(error => console.log(error));
@@ -53,22 +53,22 @@ export class NewExperienciaComponent implements OnInit {
 
   onCreate() {
     const expe = new Experiencia(
-      this.nombreExperiencia, 
+      this.nombreExperiencia,
       this.descripcionExperiencia,
       this.urlViewImg
-      );
-    
-      //console.log(expe)
-      /* */
-    this.experienciaService.save(expe).subscribe(
-      data => {
-        alert("Experiencia añadida");
-        this.router.navigate(['']);
-      }, err => {
-        alert("Falló al guardar experiencia");
-        this.router.navigate(['']);
-      }
-    )
-    
+    );
+    if (!this.urlViewImg) {
+      alert("¡¡error!! la imagen no se ha subido a la DB, espere unos instantes hasta que se suba a la base de datos");
+    } else {
+      this.experienciaService.save(expe).subscribe(
+        data => {
+          alert("Experiencia añadida");
+          this.router.navigate(['']);
+        }, err => {
+          alert("Falló al guardar experiencia");
+          this.router.navigate(['']);
+        }
+      )
+    }
   }
 }

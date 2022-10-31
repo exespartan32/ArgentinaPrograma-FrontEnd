@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
+import { Perfil } from 'src/app/model/acercaDe';
+import { Persona } from 'src/app/model/persona.model';
+import { PerfilService } from 'src/app/service/perfil.service';
 import { PersonaService } from 'src/app/service/persona.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -9,10 +11,13 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: persona = new persona("", "", "");
+  persona: Persona = new Persona("", "", "");
+  perfil: Perfil = new Perfil("", "");
+
   constructor(
     public personaService: PersonaService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private perfilService: PerfilService
   ) { }
 
   isLogged = false;
@@ -24,6 +29,16 @@ export class AcercaDeComponent implements OnInit {
       this.isLogged = false;
     }
     this.personaService.getPersona().subscribe(data => { this.persona = data })
+    this.cargarPerfil();
     //console.log(this.personaService)
   }
+
+  cargarPerfil(): void {
+    this.perfilService.getProfile().subscribe(
+      data => {
+        this.perfil = data;
+      }
+    )
+  }
+
 }

@@ -63,6 +63,7 @@ export class EditExperienciaComponent implements OnInit {
     }else{
       this.experienciaService.update(id, this.expLab).subscribe(
         data => {
+          alert('experiencia actualizada');
           this.router.navigate(['']);
         }, err => {
           alert("Error al modificar experiencia");
